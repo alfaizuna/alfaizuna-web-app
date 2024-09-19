@@ -23,11 +23,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeWAjsqAAAAAC7RBjTJVUBhr8wZQhg0OjktL1fo"></script>
-    <!-- Replace the variables below. -->
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfcwEgqAAAAAL1n58SBj5CRFfUHCb-3rPWJk1DI"></script>
     <script>
     function onSubmit(token) {
-      document.getElementById("demo-form").submit();
+      document.getElementById("contact-form").submit();
     }
   </script>
 </head>
@@ -207,13 +206,6 @@
             <header>
                 <h2 class="h2 article-title">About me</h2>
             </header>
-
-            <button class="g-recaptcha"
-                data-sitekey="6LeWAjsqAAAAAC7RBjTJVUBhr8wZQhg0OjktL1fo"
-                data-callback='onSubmit'
-                data-action='submit'>
-            Submit
-            </button>
 
             <section class="about-text">
                 <p>
@@ -1192,6 +1184,12 @@
                     <button class="form-btn" type="submit" disabled data-form-btn>
                         <ion-icon name="paper-plane"></ion-icon>
                         <span>Send Message</span>
+                    </button>
+                    <button class="g-recaptcha"
+                        data-sitekey="6LeWAjsqAAAAAC7RBjTJVUBhr8wZQhg0OjktL1fo"
+                        data-callback='onSubmit'
+                        data-action='submit'>
+                    Submit
                     </button>
 
                 </form>
