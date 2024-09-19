@@ -1,11 +1,28 @@
-<html></html>
+<html>
   <head>
     <title>reCAPTCHA demo: Simple page</title>
     <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- SweetAlert2 CDN -->
+    <script>
+      function onSubmit(token) {
+        // Show a SweetAlert before redirecting
+        Swal.fire({
+          title: 'Success!',
+          text: 'You will be redirected to Google shortly.',
+          icon: 'success',
+          timer: 3000, // Time in milliseconds before redirect
+          showConfirmButton: false,
+          willClose: () => {
+            // After Swal closes, redirect to Google
+            window.location.href = "https://www.google.com";
+          }
+        });
+      }
+    </script>
   </head>
   <body>
-    <form action="" method="POST">
-      <div class="g-recaptcha" data-sitekey="6LfcwEgqAAAAAL1n58SBj5CRFfUHCb-3rPWJk1DI" data-action="LOGIN"></div>
+    <form action="" method="POST" onsubmit="onSubmit(event)">
+      <div class="g-recaptcha" data-sitekey="6LfcwEgqAAAAAL1n58SBj5CRFfUHCb-3rPWJk1DI" data-callback="onSubmit" data-action="LOGIN"></div>
       <br/>
       <input type="submit" value="Submit">
     </form>
