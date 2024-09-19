@@ -24,14 +24,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeWAjsqAAAAAC7RBjTJVUBhr8wZQhg0OjktL1fo"></script>
+    <!-- Replace the variables below. -->
     <script>
-        function onClick(e) {
-          e.preventDefault();
-          grecaptcha.enterprise.ready(async () => {
-            const token = await grecaptcha.enterprise.execute('6LeWAjsqAAAAAC7RBjTJVUBhr8wZQhg0OjktL1fo', {action: 'LOGIN'});
-          });
-        }
-      </script>
+    function onSubmit(token) {
+      document.getElementById("demo-form").submit();
+    }
+  </script>
 </head>
 
 <body>
@@ -209,6 +207,13 @@
             <header>
                 <h2 class="h2 article-title">About me</h2>
             </header>
+
+            <button class="g-recaptcha"
+                data-sitekey="6LeWAjsqAAAAAC7RBjTJVUBhr8wZQhg0OjktL1fo"
+                data-callback='onSubmit'
+                data-action='submit'>
+            Submit
+            </button>
 
             <section class="about-text">
                 <p>
