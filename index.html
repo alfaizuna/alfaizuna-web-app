@@ -23,6 +23,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeWAjsqAAAAAC7RBjTJVUBhr8wZQhg0OjktL1fo"></script>
+    <script>
+        function onClick(e) {
+          e.preventDefault();
+          grecaptcha.enterprise.ready(async () => {
+            const token = await grecaptcha.enterprise.execute('6LeWAjsqAAAAAC7RBjTJVUBhr8wZQhg0OjktL1fo', {action: 'LOGIN'});
+          });
+        }
+      </script>
 </head>
 
 <body>
