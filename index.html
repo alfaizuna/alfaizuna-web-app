@@ -7,7 +7,7 @@
       function onSubmit(token) {
         // Show a SweetAlert before redirecting
         Swal.fire({
-          title: 'Success!'+token,
+          title: 'Success!',
           text: 'You will be redirected to Google shortly.',
           icon: 'success',
           timer: 3000, // Time in milliseconds before redirect
@@ -22,10 +22,10 @@
   </head>
   <body>
     <form action="" method="POST" onsubmit="onSubmit(event)">
-        <div class="g-recaptcha" data-sitekey="6LfcwEgqAAAAAL1n58SBj5CRFfUHCb-3rPWJk1DI" data-callback="onSubmit" data-action="LOGIN"></div>
+        <div class="g-recaptcha" data-sitekey="6LfcwEgqAAAAAL1n58SBj5CRFfUHCb-3rPWJk1DI"  data-action="LOGIN"></div>
         <br/>
         <!-- Replaced input with button -->
-        <button type="button">Submit</button>
+        <button type="button" data-callback="onSubmit">Submit</button>
       </form>
   </body>
 </html>
